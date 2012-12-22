@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="main-container group">
+  <div class="ui-left">
+    <h1 class="title">Invest in Startups</h1>
+
+    <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut metus 
+    dolor. Habla espanyol banana apple orange.
+    </p>
+
+    <ul>
+      <li>
+      Integer purus nunc, consectetur vel fermentum ut.
+      </li>
+
+      <li>
+      Aliquam a nulla purus, non vestibulum leo.
+      </li>
+
+      <li>
+      Fusce consequat molestie mattis nulla .
+      </li>
+    </ul>
+  </div>
+
+  <div class="ui-right">
+  	<h2>Sign up for early access!</h2>
+
+    <form id="reg-form" class="reg-form" method="post" url="/register">
+      {% csrf_token %}
+
+      <div class="group">
+        <label>Full Name</label>
+        {{ registration.fullname }}
+      </div>
+
+      <div class="group">
+        <label>Email</label>
+        {{ registration.email }}
+      </div>
+
+      <div class="group">
+       <label>Amount</label>
+       {{ registration.amount }}
+      </div>
+
+      <div class="group">
+      	<label>&nbsp;</label>
+        <input class="btn green block-lvl" type="submit" value="Sign Up">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
